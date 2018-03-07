@@ -4,12 +4,12 @@ Demonstrates using (calling) FUNCTIONS and using (calling) METHODS:
   -- how they differ.
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Bryce PruemerE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 #
-# TODO: 2.
+# DONE: 2.
 #   READ this comment, ASKING QUESTIONS as needed to understand it.
 #
 # Part 1:  CONSTRUCTING objects, applying ** METHODS ** to them:
@@ -82,7 +82,9 @@ def main():
     draw_many_squares(turtle, 3, 75, 15)
 
     turtle3()
-
+    try_methods()
+    try_functions()
+    try_methods_and_functions()
     ###########################################################################
     # When the TODOs ask you to test YOUR code, put YOUR tests below this:
     ###########################################################################
@@ -180,8 +182,16 @@ def try_methods():
       -- forward    50 units
       -- backward  100 units
     """
+
+    steve = rg.SimpleTurtle('square')
+    steve.pen = rg.Pen('brown', 5)
+    steve.forward(150)
+    steve.left(90)
+    steve.forward(50)
+    steve.backward(100)
+
     ###########################################################################
-    # TODO: 3. Implement and this function, per its doc-string above.
+    # DONE: 3. Implement and test this function, per its doc-string above.
     #     (To test it, put a statement in   main   that calls this function.)
     ###########################################################################
 
@@ -194,8 +204,12 @@ def try_functions():
      -- One jumps to (100, 200), then moves (while drawing) to (0, 0)
      -- One jumps to (-50, 50), then moves (while drawing) to (100, 100)
     """
+    jump_and_move_turtle(200, 100, 300, 30)
+    jump_and_move_turtle(100, 200, 0, 0)
+    jump_and_move_turtle(-50, 50, 100, 100)
+
     ###########################################################################
-    # TODO: 4. Implement and test this function, per its doc-string above.
+    # DONE: 4. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #    NOTE: This function requires
@@ -239,8 +253,31 @@ def try_methods_and_functions():
 
       8. Draw a SQUARE whose sides are each of length 50.
     """
+    rick = rg.SimpleTurtle()
+    rick.pen = rg.Pen('blue', 5)
+
+    rick.backward(150)
+
+    rick.speed = 1
+    draw_many_squares(rick, 2, 100, 30)
+
+    rick.speed = 5
+    rick.pen.color = 'red'
+    draw_many_squares(rick, 10, 50, 15)
+
+    rick.speed = 100
+    rick.pen.thickness = 35
+    draw_many_squares(rick, 8, 300, 60)
+
+    rick.pen = rg.Pen('black', 3)
+
+    rick.backward(200)
+
+    rick.draw_circle(30)
+
+    rick.draw_square(50)
     ###########################################################################
-    # TODO: 5. Implement and test this function, per its doc-string above.
+    # DONE: 5. Implement and test this function, per its doc-string above.
     #    (To test it, put a statement in   main   that calls this function.)
     #
     #   NOTE: This function should ** CALL ** the
